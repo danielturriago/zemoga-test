@@ -1,0 +1,102 @@
+@import '../../../sass/variables.sass'
+
+.navbar
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 150px
+    padding: 0 130px
+    background: -moz-linear-gradient(top, rgba(51,51,51,1) 0%, rgba(51,51,51,0) 100%)
+    background: -webkit-linear-gradient(top, rgba(51,51,51,1) 0%,rgba(51,51,51,0) 100%)
+    background: linear-gradient(to bottom, rgba(51,51,51,1) 0%,rgba(51,51,51,0) 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#333333',GradientType=0 )
+    z-index: 1
+.navbar-content
+    padding-top: 20px
+    display: flex
+    align-items: center
+    justify-content: space-between
+.navbar-logo
+    a
+        text-decoration: none
+        font-size: 32px
+        font-weight: 500
+        color: #FFFFFF
+.navbar-links
+    .close-mobile-menu
+        display: none
+    img
+        margin-left: 30px
+        vertical-align: middle
+        height: 20px
+    .links-list
+        a
+            color: #FFFFFF
+            text-decoration: none
+            font-weight: 100
+            padding-left: 30px
+
+@media only screen and (max-width: $break-small-laptop)
+    .navbar
+        padding: 0 70px
+
+@media only screen and (max-width: $break-mobile), screen and (orientation: portrait)
+    .navbar
+        padding: 0 10px
+        .links-list
+            position: fixed
+            top: 0
+            right: -100%
+            width: 100%
+            height: 100vh
+            background-color: rgba(51, 51, 51, 0.85)
+            transition: .3s
+            padding-top: 40px
+            a
+                padding-left: 10px
+                margin: 20px 0
+                font-size: 38px
+                font-weight: 500
+                display: block
+            img
+                height: 25px
+                margin-top: 20px
+                margin-left: 10px
+            &.active
+                right: 0
+            .close-mobile-menu
+                display: block
+                position: absolute
+                top: 25px
+                font-size: 18px
+                font-weight: 500
+                right: 15px
+                color: #FFFFFF
+    .mobile-hamburger
+        button
+            position: relative
+            width: 20px
+            height: 15px
+            background-color: transparent
+        .bar
+            height: 2px
+            width: 20px
+            display: block
+            margin: 0 auto
+            background-color: #FFFFFF
+            border-radius: 10px
+            transition: .4s
+            position: absolute
+            &:nth-of-type(1)
+                top: 0px
+                transition: top 0.2s ease 0.3s, transform 0.3s ease-out 0.1s
+
+            &:nth-of-type(2)
+                top: 6px
+                transition: 0.25s ease .3s
+                opacity: 1
+
+            &:nth-of-type(3)
+                top: 12px
+                transition: top 0.2s ease .3s, transform .3s ease-out .1s

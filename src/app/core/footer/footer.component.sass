@@ -1,0 +1,58 @@
+@import '../../../sass/variables.sass'
+
+.footer-add-box
+    margin-top: 30px
+    background-image: url('../../../assets/img/footer-cover.jpg')
+    background-size: cover
+    background-position: center
+    .footer-add-box-content
+        background-color: rgba(255, 255, 255, .85)
+        display: flex
+        align-items: center
+        padding: 20px
+        justify-content: space-between
+        p
+          font-size: 30px
+        button
+            background-color: transparent
+            border: 2px solid #333333
+            padding: 0 20px
+            height: 50px
+.footer-links
+    margin-top: 30px
+    padding: 30px 0
+    display: flex
+    justify-content: space-between
+    background-image: linear-gradient(to right, #333333 33%, rgba(51,51,51,0) 0%)
+    background-position: top
+    background-size: 4px 1px
+    background-repeat: repeat-x
+.footer-links-left
+    a
+        text-decoration: none
+        padding-right: 15px
+        color: #333333
+        font-size: 12px
+.footer-links-right
+    display: flex
+    align-items: center
+    p
+        text-decoration: none
+        color: #333333
+        font-size: 12px
+    img
+        width: 25px
+        margin-left: 15px
+
+@media only screen and (max-width: $break-mobile), screen and (orientation: portrait)
+    .footer-add-box-content
+        flex-direction: column
+    .footer-add-box
+        button
+            width: 100%
+            margin-top: 20px
+    .footer-links
+        flex-direction: column
+        align-items: center
+    .footer-links-right
+        padding: 20px 0 0 0

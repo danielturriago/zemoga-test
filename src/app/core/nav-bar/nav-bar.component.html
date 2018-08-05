@@ -1,0 +1,23 @@
+<div class="navbar">
+  <div class="navbar-content">
+    <div class="navbar-logo">
+      <a [routerLink]="'/'">Rule of Thumb.</a>
+    </div>
+    <div class="navbar-links">
+      <div class="mobile-hamburger">
+        <button (click)="toggleMobileMenu()">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+      <div class="links-list" [class.active]="mobileMenu">
+        <div class="close-mobile-menu" (click)="toggleMobileMenu()">X</div>
+        <a [routerLink]="'/past-trials'">Past Trials</a>
+        <a [routerLink]="'/how-it-works'">How It Works</a>
+        <a href="">Log In / Sign Up</a>
+        <img src="assets/img/mirror-glass.png" alt="">
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="voting-box-container">
+    <div class="voting-box" 
+    [ngStyle]="{ 'background-image': 'url(assets/img/'+ (candidate.image) + ')' }">
+        <div class="voting-box-shadow"></div>
+        <div class="voting-box-description">
+            <div class="description-top">
+                <div class="voting-trend">
+                    <ng-container *ngIf="isUpTrend() ; else downTrend">
+                        <span class="up-trend">
+                            <img src="assets/img/thumbs-up.png" alt="">
+                        </span>
+                    </ng-container>
+                </div>
+                <h4>{{candidate.name}}</h4>
+                <p><strong>{{candidate.voting_time}}</strong>  {{candidate.category}}</p>
+            </div>
+            <ng-container *ngIf="!voteSuccess; else voteAgain">
+                <div id="votingBox" class="description-center">
+                    <p>{{candidate.description}}</p>
+                </div>
+                <div class="description-bottom">
+                    <button [class.active]="voteSelection && voteSelected" class="thumbs-up" (click)="selectVote(true)"><img src="assets/img/thumbs-up.png" alt=""></button>
+                    <button [class.active]="!voteSelection && voteSelected" class="thumbs-down" (click)="selectVote(false)"><img src="assets/img/thumbs-down.png" alt=""></button>
+                    <button (click)="voteSubmission()" class="vote-now">Vote Now</button>
+                </div>
+            </ng-container>
+        </div>
+        <div class="voting-results">
+                <div class="thumbs-up-results" [ngStyle]="{'width': (getPercentage(candidate.thumbs_up)) + '%'}">
+                    <img src="assets/img/thumbs-up.png" alt=""> <p><span>{{getPercentage(candidate.thumbs_up)}}</span>%</p>
+                </div>
+                <div class="thumbs-down-results" [ngStyle]="{'width': (getPercentage(candidate.thumbs_down)) + '%'}">
+                   <p><span>{{getPercentage(candidate.thumbs_down)}}</span>%</p> <img src="assets/img/thumbs-down.png" alt=""> 
+                </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #voteAgain>
+    <div id="thanksVoting" class="description-center">
+        <p>Thank you for voting!</p>
+    </div>
+    <div class="description-bottom">
+        <button (click)="resetVoting()" class="vote-now">Vote Again</button>
+    </div>
+</ng-template>
+
+<ng-template #downTrend>
+    <span class="down-trend">
+        <img src="assets/img/thumbs-down.png" alt="">
+    </span>
+</ng-template>

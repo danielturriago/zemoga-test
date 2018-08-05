@@ -1,0 +1,144 @@
+@import '../../../sass/variables.sass'
+
+header
+    background-image: url(../../../assets/img/home-cover.jpg)
+    background-size: cover
+    background-attachment: fixed
+    height: 50vh
+    min-height: 740px
+    width: 100%
+    position: relative
+.header
+  position: relative
+  margin: 0 130px
+  top: 170px
+  width: 492px
+  overflow: hidden
+  &::before
+    background-image: url(../../../assets/img/home-cover.jpg)
+    background-size: cover
+    background-attachment: fixed
+    content: ''
+    margin: -35px
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    filter: blur(20px)
+    min-height: 740px
+.header-content
+    position: relative
+    background-color: rgba(51, 51, 51 ,.45)
+    color: #FFFFFF
+    padding: 30px
+    h1
+        font-size: 16px
+        font-weight: 100
+        span
+            font-weight: 500
+            display: block
+            font-size: 60px
+    h2
+        font-size: 20px
+        font-weight: 700
+    p
+        padding-top: 20px
+        font-size: 21px
+    .more-info
+        padding: 20px 0 40px
+        img
+            height: 12px
+            padding-right: 5px
+        a
+            color: #FFFFFF
+            font-size: 14px
+.header-buttons
+    position: relative
+    display: flex
+    width: 100%
+    .header-thumbs-up, .header-thumbs-down
+        width: 50%
+        text-align: center
+        height: 80px
+        display: flex
+        align-items: center
+        justify-content: center
+    .header-thumbs-up
+        background-color: rgba(28, 187, 180, .7)
+    .header-thumbs-down
+        background-color: rgba(255, 173, 29, .7)
+.closing-time-bar
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    display: flex
+    background-color: rgba(112, 112, 112, .3)
+    height: 50px
+    line-height: 50px
+    .closing-time-text
+        padding: 0 20px
+        width: 30%
+        text-align: right
+        position: relative
+        p
+            text-transform: uppercase
+            font-size: 13px
+            font-weight: 500
+            color: #FFFFFF
+        &::before
+            content: ""
+            position: absolute
+            top: 0
+            bottom: 0
+            right: -11px
+            height: 0
+            margin: auto
+            border-width: 10px 6px 0 6px
+            border-style: solid
+            border-color: rgba(112, 112, 112, .6) transparent transparent transparent
+            z-index: 100
+            transform: rotate(-90deg)
+    .closing-time-days
+        padding: 0 20px
+        flex: 1
+        background-color: rgba(255, 255, 255, .7)
+        p
+            color: #464646
+            font-size: 36px
+        strong
+            font-weight: 500
+
+@media only screen and (max-width: $break-small-laptop)
+    .header
+        margin: 0 70px
+
+@media only screen and (max-width: $break-mobile), screen and (orientation: portrait)
+    header
+        background-attachment: initial
+        background-position: center
+        min-height: 600px
+    .header
+        top: initial
+        bottom: 50px    
+        width: 100%
+        margin: 0
+        position: absolute
+        &::before
+            background-image: none
+    .header-content
+        width: 100%
+        padding: 15px
+        .more-info
+            padding: 20px 0
+        h1
+            span
+                font-size: 42px
+        p
+            font-size: 16px
+    .header-buttons
+        .header-thumbs-up, .header-thumbs-down
+            height: 60px
+            img
+                height: 30px

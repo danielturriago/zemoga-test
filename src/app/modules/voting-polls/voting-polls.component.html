@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="speakout-box">
+    <div class="speakout-title">
+      <h3>Speak out. Be heard.</h3>
+      <h4>Be counted</h4>
+    </div>
+    <div class="speakout-content">
+      <p>Rule of Thumb is a crowd sourced court of public opinion where anyone and everyone can speak out and speak freely. It’s easy: You share your opinion, we analyze and put the data in a public report.</p>
+    </div>
+    <div class="close-speakout">
+        <img src="assets/img/close.png" alt="">
+    </div>
+  </div>
+
+  <div class="voting-polls-title">
+      <h2>Previous Rulings</h2>
+  </div>
+  <ul *ngIf="votingBoxes" class="voting-polls">
+    <li *ngFor="let box of votingBoxes">
+      <app-voting-box
+        [candidate]="box"
+        (submitVote)="submitVote($event)">
+      </app-voting-box>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,53 @@
+@import '../../../sass/variables.sass'
+
+.speakout-box
+    margin: 40px 0 20px
+    padding: 20px
+    background-color: #ebebeb
+    display: flex
+    align-items: center
+    position: relative
+    .speakout-title
+        white-space: nowrap
+        h3
+            font-size: 21px
+            color: #333333
+        h4
+            font-weight: 700
+            color: #333333
+            font-size: 37px
+            line-height: 35px
+    .speakout-content
+        padding: 0 20px
+        p
+            color: #333333
+            font-size: 15px
+    .close-speakout
+        padding: 0 20px
+        img
+            width: 20px
+
+.voting-polls-title
+    padding: 20px 0
+    h2
+        font-size: 40px
+        font-weight: 100
+        color: #333333
+.voting-polls
+    display: flex
+    flex-wrap: wrap
+    li
+        width: 50%
+
+@media only screen and (max-width: $break-mobile)
+    .speakout-box
+        align-items: flex-start     
+        flex-direction: column
+        .speakout-content
+            padding: 10px 0
+        .close-speakout
+            position: absolute
+            right: 0
+    .voting-polls
+        li
+            width: 100%
